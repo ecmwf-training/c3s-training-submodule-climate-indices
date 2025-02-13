@@ -1,3 +1,7 @@
+name: example-environment
+channels:
+  - conda-forge
+  - defaults
 dependencies:
   - cdsapi
   - numpy
