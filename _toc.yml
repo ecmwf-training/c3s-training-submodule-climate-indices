@@ -4,6 +4,8 @@
 format: jb-book
 root: intro
 chapters:
- - file: ci-windchill
-   title: Windchill
+  - file: ci-windchill
+    title: Windchill
+  - file: gtsmip-water-levels.ipynb
+    title: GTSMIP Water Levels
 
