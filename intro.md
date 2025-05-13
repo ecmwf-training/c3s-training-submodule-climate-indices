@@ -17,3 +17,11 @@ The tutorial will first show how to download the necessary data from the C3S Cli
 The steps shown in this tutorial can be applied to other climate datasets, such as the 5th version of the ECMWF Reanalysis (ERA5), or other data.
 
 ![logo](./img/climate_indices.png)
+
+### Working with the GTSMip dataset of global tides and surges
+
+This notebook provides a practical introduction on how to access, visualize and analyse [GTSMip tide and surge water level timeseries](https://cds.climate.copernicus.eu/datasets/sis-water-level-change-timeseries-cmip6?tab=overview) data available in the Climate Data Store (CDS) of the Copernicus Climate Change Service (C3S), developed by Deltares in order to accompany the dataset. This data is the output of the the global tide and surge model [GTSMv3.0](https://www.deltares.nl/en/expertise/projects/global-modelling-of-tides-and-storm-surges).
+
+### End-to-end agroclimatic indicator generation
+
+This notebook demonstrates the process of computing a \"Warm and wet days\" (WW) indicator (https://confluence.ecmwf.int/pages/viewpage.action?pageId=278550975), based on a climate projection.
