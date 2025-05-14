@@ -1,7 +1,5 @@
-name: example-environment
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - cdsapi
   - numpy
@@ -9,4 +7,3 @@ dependencies:
   - xarray
   - matplotlib
   - cartopy
-  - jupyterlab-myst
