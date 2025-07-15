@@ -1,6 +1,6 @@
 ![logo](https://climate.copernicus.eu/sites/default/files/custom-uploads/branding/LogoLine_horizon_C3S.png)
 
-# C3S climate indices tutorials
+# Tutorials on C3S climate indices datasets
 
 ## Introduction to climate indices
 
