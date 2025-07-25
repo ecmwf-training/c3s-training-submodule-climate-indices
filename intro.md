@@ -1,10 +1,10 @@
 ![logo](https://climate.copernicus.eu/sites/default/files/2025-03/logoline_c3s.png)
 
-# Tutorials on C3S climate indices datasets
+# Tutorials on C3S climate indicators datasets
 
-## Introduction to climate indices
+## Introduction to climate indicators
 
-Climate indices are metrics used to quantify various aspects of the climate system, providing insights into trends, patterns, and anomalies. They are simplified (not to be confused with simple), numerical representations of complex climate patterns, or phenomena. Calculated from climate data, climate indices help us to track the behaviour of large-scale characteristics or features of the Earth’s climate system. This set of tutorials offer an introduction to climate indices, giving you insights into their definition, calculation methods, and interpretation.
+Climate indicators are metrics used to quantify various aspects of the climate system, providing insights into trends, patterns, and anomalies. They are simplified (not to be confused with simple), numerical representations of complex climate patterns, or phenomena. Calculated from climate data, climate indicators help us to track the behaviour of large-scale characteristics or features of the Earth’s climate system. This set of tutorials offer an introduction to climate indicators, giving you insights into their definition, calculation methods, and interpretation.
 
 ### 1. Windchill index calculation
 
