@@ -6,6 +6,7 @@ root: intro
 chapters:
   - file: ci-windchill
     title: Windchill
-  - file: gtsmip-water-levels.ipynb
+  - file: gtsmip-water-levels
     title: GTSMIP Water Levels
-
+  - file: warm-and-wet-days-indicator
+    title: Warm and Wet Days

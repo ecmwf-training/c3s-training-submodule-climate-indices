@@ -1,15 +1,15 @@
-![logo](https://climate.copernicus.eu/sites/default/files/custom-uploads/branding/LogoLine_horizon_EC_Cop_ECMWF.png)
+![logo](https://climate.copernicus.eu/sites/default/files/2025-03/logoline_c3s.png)
 
-# C3S Climate Indices Tutorial
+# C3S Climate Indicators Tutorial
 
 **PLEASE NOTE THAT THIS A DEVELOPMENT INSTANCE, THESE NOTE BOOKS ARE OFFICIALLY PUBLISHED ELSEWHERE**
 
 This Jupyter book is a sub-module of the core C3S training material, it is published here for reviewing the
 content prior to publication.
 
-## Introduction to Climate Indices
+## Introduction to Climate Indicators
 
-Climate indices are key metrics used to quantify various aspects of the climate system, providing insights into trends, patterns, and anomalies. This tutorial offers an introduction to climate indices, covering their definition, calculation methods, and interpretation.
+Climate indicators are key metrics used to quantify various aspects of the climate system, providing insights into trends, patterns, and anomalies. This tutorial offers an introduction to climate indices, covering their definition, calculation methods, and interpretation.
 
 ### Windchill Index Calculation
 
