@@ -1,0 +1,1 @@
+2026/07/15 - Updated to use JupyterBook version 2 and the EQC QA checks
