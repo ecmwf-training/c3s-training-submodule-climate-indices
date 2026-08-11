@@ -21,5 +21,6 @@ jobs:
     uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@dc915ea7e8835211225de600e005bd91ef498eee
     with:
       notebooks: ${{ inputs.notebooks || '' }}
+      qa_tools_ref: upstream/recmanj
     secrets:
       CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
