@@ -18,7 +18,7 @@ on:
 
 jobs:
   notebook-qa:
-    uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@upstream/recmanj
+    uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@dc915ea7e8835211225de600e005bd91ef498eee
     with:
       notebooks: ${{ inputs.notebooks || '' }}
     secrets:
