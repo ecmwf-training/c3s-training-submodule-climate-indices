@@ -24,7 +24,7 @@ you should take to ensure that things work as expected.
 
 ### Adding notebooks and markdown content
 
-If creating a notebook please use the [Template notebook](./template-notebook) to ensure you
+If creating a notebook please use the [Template notebook](./template-notebook.ipynb) to ensure you
 are following the expected guidelines.
 Markdown content should follow a similar structure as this README.md file.
 To make the added content appear in the Jupyter Book rendered pages, you must add the content to the
