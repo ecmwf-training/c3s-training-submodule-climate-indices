@@ -52,7 +52,7 @@ conda-env-update:
 
 .PHONY: uv-env-update
 uv-env-update:
-	uv pip install "jupyter-book>=2,<3" && uv pip install pip &&  uv pip install -r requirements.txt
+	uv pip install -q "jupyter-book>=2,<3" && uv pip install -q pip &&  uv pip install -q -r requirements.txt
 
 # ---------------------------------------------------------------------------
 # Template sync (for repositories created from this template)
@@ -96,7 +96,7 @@ qa-tools-update: ## Update the QA tools repository to the latest main
 
 .PHONY: qa-install
 qa-install: $(QA_TOOLS) ## Install QA dependencies into the active Python environment
-	cd $(QA_TOOLS) && python -m pip install .
+	cd $(QA_TOOLS) && python -m pip install -q .
 
 # ---------------------------------------------------------------------------
 # Individual checks

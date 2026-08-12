@@ -5,9 +5,13 @@ on:
   push:
     branches:
       - develop
+    paths:
+      - "**/*.ipynb"
   pull_request:
     branches:
       - develop
+    paths:
+      - "**/*.ipynb"
   workflow_dispatch:
     inputs:
       notebooks:
@@ -17,10 +21,52 @@ on:
         default: ""
 
 jobs:
+  detect-notebooks:
+    runs-on: ubuntu-latest
+    outputs:
+      notebooks: ${{ steps.changed.outputs.notebooks }}
+      has_notebooks: ${{ steps.changed.outputs.has_notebooks }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine changed notebooks
+        id: changed
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            notebooks="${{ inputs.notebooks }}"
+            echo "notebooks=$notebooks" >> "$GITHUB_OUTPUT"
+            echo "has_notebooks=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+            notebooks=$(git diff --name-only --diff-filter=ACMR "origin/${{ github.base_ref }}" HEAD -- '*.ipynb' | tr '\n' ' ')
+          else
+            base="${{ github.event.before }}"
+            if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+              base=$(git rev-parse HEAD^ 2>/dev/null || echo "")
+            fi
+            if [ -n "$base" ]; then
+              notebooks=$(git diff --name-only --diff-filter=ACMR "$base" HEAD -- '*.ipynb' | tr '\n' ' ')
+            else
+              notebooks=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMR -r HEAD -- '*.ipynb' | tr '\n' ' ')
+            fi
+          fi
+          notebooks=$(echo "$notebooks" | xargs || true)
+          echo "notebooks=$notebooks" >> "$GITHUB_OUTPUT"
+          if [ -n "$notebooks" ]; then
+            echo "has_notebooks=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_notebooks=false" >> "$GITHUB_OUTPUT"
+          fi
+
   notebook-qa:
-    uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@upstream/recmanj
+    needs: detect-notebooks
+    if: needs.detect-notebooks.outputs.has_notebooks == 'true'
+    uses: ecmwf-training/reusable-workflows/.github/workflows/notebook-qa.yml@v1
     with:
-      notebooks: ${{ inputs.notebooks || '' }}
-      qa_tools_ref: upstream/recmanj
+      notebooks: ${{ needs.detect-notebooks.outputs.notebooks }}
     secrets:
       CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
